@@ -1,0 +1,1491 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>萌次元交流站｜升級版</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Microsoft JhengHei", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe6f2, #e6f4ff);
+      min-height: 100vh;
+      color: #444;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    header {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ff6fae;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 16px;
+      cursor: pointer;
+      background: #ff8fbd;
+      color: white;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .secondary-btn {
+      background: #8fc8ff;
+    }
+
+    .gray-btn {
+      background: #b8b8b8;
+    }
+
+    .danger-btn {
+      background: #ff7d7d;
+    }
+
+    .outline-btn {
+      background: white;
+      color: #ff6fae;
+      border: 2px solid #ffc7dd;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 24px auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.96);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 14px;
+      color: #ff5f9e;
+    }
+
+    .auth-wrapper {
+      max-width: 480px;
+      margin: 40px auto;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tabs button.active {
+      background: #ff5f9e;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #f2d4e3;
+      border-radius: 14px;
+      outline: none;
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ff9cc4;
+    }
+
+    .profile-box {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffd2e6;
+      background: #fff;
+    }
+
+    .small-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffd2e6;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .profile-meta p {
+      margin: 5px 0;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .post-card {
+      border: 2px solid #f9e2ed;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 18px;
+      background: #fffdfa;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .post-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #ff5f9e;
+      margin-bottom: 8px;
+    }
+
+    .post-meta {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .post-content {
+      margin: 10px 0 12px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .post-image {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-top: 10px;
+      border: 2px solid #f5d9e8;
+    }
+
+    .post-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .icon-btn {
+      background: #fff0f6;
+      color: #ff5f9e;
+      border: 2px solid #ffd6e6;
+      padding: 8px 14px;
+    }
+
+    .icon-btn.liked {
+      background: #ff5f9e;
+      color: white;
+      border-color: #ff5f9e;
+    }
+
+    .owner-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .comments-section {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed #e6bfd0;
+    }
+
+    .comment-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      background: #fff7fb;
+      border-radius: 14px;
+      padding: 10px;
+    }
+
+    .comment-body {
+      flex: 1;
+    }
+
+    .comment-top {
+      font-size: 0.92rem;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .comment-content {
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .comment-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .comment-form input {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .preview {
+      margin-top: 10px;
+      max-width: 180px;
+      border-radius: 16px;
+      border: 2px solid #f7d9e7;
+    }
+
+    .empty {
+      text-align: center;
+      color: #999;
+      padding: 20px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #ff5f9e;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .share-hint {
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .profile-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .post-actions,
+      .owner-actions,
+      .comment-form,
+      .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .comment-item {
+        flex-direction: column;
+      }
+    }
+
+    .clickable-user {
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .clickable-user:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🌸 萌次元交流站</div>
+    <nav>
+      <button id="navAuthBtn">登入 / 註冊</button>
+      <button id="navHomeBtn" class="secondary-btn hidden">個人首頁</button>
+      <button id="navShareBtn" class="secondary-btn">分享區</button>
+      <button id="navNewPostBtn" class="hidden">新增貼文</button>
+      <button id="navLogoutBtn" class="gray-btn hidden">登出</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- 登入註冊 -->
+    <section id="authSection" class="auth-wrapper">
+      <div class="card">
+        <h2>歡迎來到萌次元交流站 ✨</h2>
+        <div class="tabs">
+          <button id="showLoginTab" class="active">登入</button>
+          <button id="showRegisterTab" class="secondary-btn">註冊</button>
+        </div>
+
+        <div id="loginFormWrap">
+          <div class="form-group">
+            <label for="loginId">ID</label>
+            <input type="text" id="loginId" placeholder="請輸入 ID" />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">密碼</label>
+            <input type="password" id="loginPassword" placeholder="請輸入密碼" />
+          </div>
+          <button id="loginBtn">登入</button>
+        </div>
+
+        <div id="registerFormWrap" class="hidden">
+          <div class="form-group">
+            <label for="registerId">ID</label>
+            <input type="text" id="registerId" placeholder="請輸入唯一 ID" />
+          </div>
+          <div class="form-group">
+            <label for="registerName">名稱</label>
+            <input type="text" id="registerName" placeholder="請輸入顯示名稱" />
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">密碼</label>
+            <input type="password" id="registerPassword" placeholder="請輸入密碼" />
+          </div>
+          <div class="form-group">
+            <label for="registerAvatar">上傳頭貼</label>
+            <input type="file" id="registerAvatar" accept="image/*" />
+            <img id="registerAvatarPreview" class="preview hidden" alt="頭貼預覽" />
+          </div>
+          <button id="registerBtn">註冊</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 個人首頁 -->
+    <section id="homeSection" class="hidden">
+      <div class="card">
+        <h2>個人首頁</h2>
+        <div id="profileArea"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title-row">
+          <h3>我的貼文</h3>
+          <button id="goNewPostFromHome">＋ 新增貼文</button>
+        </div>
+        <div id="myPostsList"></div>
+      </div>
+    </section>
+
+    <!-- 他人個人頁面 -->
+    <section id="userProfileSection" class="hidden">
+      <div class="card">
+        <div class="section-title-row">
+          <h2 id="userProfileTitle">個人頁面</h2>
+          <button onclick="showSection('share')" class="outline-btn">返回分享區</button>
+        </div>
+        <div id="otherProfileArea"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title-row">
+          <h3>他的貼文</h3>
+        </div>
+        <div id="otherPostsList"></div>
+      </div>
+    </section>
+
+    <!-- 發文 / 編輯頁 -->
+    <section id="newPostSection" class="hidden">
+      <div class="card">
+        <h2 id="postFormTitle">新增貼文</h2>
+        <div id="newPostUserInfo" class="profile-box" style="margin-bottom: 18px;"></div>
+
+        <div class="form-group">
+          <label for="postTitle">發布主題</label>
+          <input type="text" id="postTitle" placeholder="請輸入主題" />
+        </div>
+
+        <div class="form-group">
+          <label for="postContent">發布內容</label>
+          <textarea id="postContent" placeholder="分享你的動漫心得吧～"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="postImage">上傳圖片（可選）</label>
+          <input type="file" id="postImage" accept="image/*" />
+          <img id="postImagePreview" class="preview hidden" alt="貼文圖片預覽" />
+        </div>
+
+        <div class="actions">
+          <button id="submitPostBtn">發布貼文</button>
+          <button id="cancelPostBtn" class="gray-btn">取消</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分享區 -->
+    <section id="shareSection">
+      <div class="card">
+        <div class="section-title-row">
+          <div>
+            <h2>分享區</h2>
+            <p class="share-hint">大家的動漫貼文都在這裡 💖</p>
+          </div>
+        </div>
+
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="搜尋貼文主題、內容、作者..." />
+          <button id="searchBtn">搜尋</button>
+          <button id="clearSearchBtn" class="outline-btn">清除</button>
+        </div>
+
+        <div style="margin-top:16px;" id="allPostsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    const STORAGE_KEYS = {
+      USERS: "anime_users",
+      CURRENT_USER: "anime_current_user",
+      POSTS: "anime_posts",
+      INIT: "anime_initialized"
+    };
+
+    const defaultAvatar =
+      "data:image/svg+xml;utf8," +
+      encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+          <rect width="100%" height="100%" fill="#ffe3f0"/>
+          <circle cx="50" cy="38" r="18" fill="#ffb3d1"/>
+          <rect x="25" y="60" width="50" height="24" rx="12" fill="#ffc9de"/>
+        </svg>
+      `);
+
+    let editingPostId = null;
+    let currentSearchKeyword = "";
+    let viewingUserId = null;
+
+    function getUsers() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.USERS)) || [];
+    }
+
+    function setUsers(users) {
+      localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(users));
+    }
+
+    function getCurrentUser() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.CURRENT_USER)) || null;
+    }
+
+    function setCurrentUser(user) {
+      localStorage.setItem(STORAGE_KEYS.CURRENT_USER, JSON.stringify(user));
+    }
+
+    function clearCurrentUser() {
+      localStorage.removeItem(STORAGE_KEYS.CURRENT_USER);
+    }
+
+    function getPosts() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.POSTS)) || [];
+    }
+
+    function setPosts(posts) {
+      localStorage.setItem(STORAGE_KEYS.POSTS, JSON.stringify(posts));
+    }
+
+    function formatTime(date = new Date()) {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, "0");
+      const d = String(date.getDate()).padStart(2, "0");
+      const h = String(date.getHours()).padStart(2, "0");
+      const min = String(date.getMinutes()).padStart(2, "0");
+      return `${y}-${m}-${d} ${h}:${min}`;
+    }
+
+    function makeId(prefix = "id") {
+      return prefix + "_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    function fileToBase64(file, callback) {
+      if (!file) {
+        callback("");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = e => callback(e.target.result);
+      reader.readAsDataURL(file);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function initializeDemoData() {
+      if (localStorage.getItem(STORAGE_KEYS.INIT)) return;
+
+      const demoUsers = [
+        {
+          id: "momo",
+          name: "小萌",
+          password: "123456",
+          avatar: defaultAvatar
+        },
+        {
+          id: "sakura",
+          name: "小櫻",
+          password: "123456",
+          avatar: defaultAvatar
+        }
+      ];
+
+      const postId = makeId("post");
+
+      const demoPosts = [
+        {
+          postId,
+          authorId: "momo",
+          authorName: "小萌",
+          authorAvatar: defaultAvatar,
+          title: "最近最喜歡的動漫角色！",
+          content: "最近迷上一位超可愛的角色，造型跟個性都很有魅力，真的讓人忍不住想一直截圖收藏～",
+          image: "",
+          createdAt: formatTime(new Date()),
+          updatedAt: "",
+          likes: 1,
+          likedUsers: ["sakura"],
+          comments: [
+            {
+              commentId: makeId("comment"),
+              postId,
+              userId: "sakura",
+              userName: "小櫻",
+              userAvatar: defaultAvatar,
+              content: "我也超喜歡這個角色！真的很可愛～",
+              createdAt: formatTime(new Date())
+            }
+          ]
+        }
+      ];
+
+      setUsers(demoUsers);
+      setPosts(demoPosts);
+      localStorage.setItem(STORAGE_KEYS.INIT, "true");
+    }
+
+    const authSection = document.getElementById("authSection");
+    const homeSection = document.getElementById("homeSection");
+    const newPostSection = document.getElementById("newPostSection");
+    const shareSection = document.getElementById("shareSection");
+    const userProfileSection = document.getElementById("userProfileSection");
+
+    function hideAllSections() {
+      authSection.classList.add("hidden");
+      homeSection.classList.add("hidden");
+      newPostSection.classList.add("hidden");
+      shareSection.classList.add("hidden");
+      userProfileSection.classList.add("hidden");
+    }
+
+    function showSection(sectionName) {
+      hideAllSections();
+
+      if (sectionName === "auth") authSection.classList.remove("hidden");
+      if (sectionName === "home") homeSection.classList.remove("hidden");
+      if (sectionName === "newPost") newPostSection.classList.remove("hidden");
+      if (sectionName === "share") shareSection.classList.remove("hidden");
+      if (sectionName === "userProfile") userProfileSection.classList.remove("hidden");
+
+      updateNav();
+    }
+
+    const navAuthBtn = document.getElementById("navAuthBtn");
+    const navHomeBtn = document.getElementById("navHomeBtn");
+    const navShareBtn = document.getElementById("navShareBtn");
+    const navNewPostBtn = document.getElementById("navNewPostBtn");
+    const navLogoutBtn = document.getElementById("navLogoutBtn");
+
+    function updateNav() {
+      const currentUser = getCurrentUser();
+
+      if (currentUser) {
+        navAuthBtn.classList.add("hidden");
+        navHomeBtn.classList.remove("hidden");
+        navNewPostBtn.classList.remove("hidden");
+        navLogoutBtn.classList.remove("hidden");
+      } else {
+        navAuthBtn.classList.remove("hidden");
+        navHomeBtn.classList.add("hidden");
+        navNewPostBtn.classList.add("hidden");
+        navLogoutBtn.classList.add("hidden");
+      }
+    }
+
+    navAuthBtn.addEventListener("click", () => showSection("auth"));
+
+    navHomeBtn.addEventListener("click", () => {
+      renderHome();
+      showSection("home");
+    });
+
+    navShareBtn.addEventListener("click", () => {
+      renderAllPosts();
+      showSection("share");
+    });
+
+    navNewPostBtn.addEventListener("click", () => {
+      const user = getCurrentUser();
+      if (!user) {
+        showToast("請先登入後再發布貼文");
+        showSection("auth");
+        return;
+      }
+      openCreatePostForm();
+    });
+
+    navLogoutBtn.addEventListener("click", () => {
+      clearCurrentUser();
+      showToast("已登出");
+      renderAllPosts();
+      showSection("share");
+    });
+
+    const showLoginTab = document.getElementById("showLoginTab");
+    const showRegisterTab = document.getElementById("showRegisterTab");
+    const loginFormWrap = document.getElementById("loginFormWrap");
+    const registerFormWrap = document.getElementById("registerFormWrap");
+
+    showLoginTab.addEventListener("click", () => {
+      loginFormWrap.classList.remove("hidden");
+      registerFormWrap.classList.add("hidden");
+      showLoginTab.classList.add("active");
+      showRegisterTab.classList.remove("active");
+    });
+
+    showRegisterTab.addEventListener("click", () => {
+      loginFormWrap.classList.add("hidden");
+      registerFormWrap.classList.remove("hidden");
+      showRegisterTab.classList.add("active");
+      showLoginTab.classList.remove("active");
+    });
+
+    const registerAvatarInput = document.getElementById("registerAvatar");
+    const registerAvatarPreview = document.getElementById("registerAvatarPreview");
+
+    registerAvatarInput.addEventListener("change", function() {
+      const file = this.files[0];
+      if (!file) {
+        registerAvatarPreview.classList.add("hidden");
+        return;
+      }
+
+      fileToBase64(file, base64 => {
+        registerAvatarPreview.src = base64;
+        registerAvatarPreview.classList.remove("hidden");
+      });
+    });
+
+    document.getElementById("registerBtn").addEventListener("click", () => {
+      const id = document.getElementById("registerId").value.trim();
+      const name = document.getElementById("registerName").value.trim();
+      const password = document.getElementById("registerPassword").value.trim();
+      const avatarFile = registerAvatarInput.files[0];
+
+      if (!id || !name || !password) {
+        showToast("請完整填寫註冊資料");
+        return;
+      }
+
+      const users = getUsers();
+      const existed = users.find(user => user.id === id);
+      if (existed) {
+        showToast("此 ID 已被使用，請更換");
+        return;
+      }
+
+      fileToBase64(avatarFile, avatarBase64 => {
+        users.push({
+          id,
+          name,
+          password,
+          avatar: avatarBase64 || defaultAvatar
+        });
+
+        setUsers(users);
+
+        document.getElementById("registerId").value = "";
+        document.getElementById("registerName").value = "";
+        document.getElementById("registerPassword").value = "";
+        registerAvatarInput.value = "";
+        registerAvatarPreview.classList.add("hidden");
+
+        showToast("註冊成功，請登入");
+        showLoginTab.click();
+      });
+    });
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      const id = document.getElementById("loginId").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+
+      const user = getUsers().find(u => u.id === id && u.password === password);
+
+      if (!user) {
+        showToast("帳號或密碼錯誤");
+        return;
+      }
+
+      setCurrentUser({
+        id: user.id,
+        name: user.name,
+        avatar: user.avatar
+      });
+
+      showToast("登入成功");
+      renderHome();
+      showSection("home");
+    });
+
+    function renderHome() {
+      const user = getCurrentUser();
+      if (!user) {
+        showSection("auth");
+        return;
+      }
+
+      const profileArea = document.getElementById("profileArea");
+      profileArea.innerHTML = `
+        <div class="profile-box">
+          <img class="avatar" src="${user.avatar}" alt="avatar" />
+          <div class="profile-meta">
+            <p><strong>名稱：</strong>${escapeHtml(user.name)}</p>
+            <p><strong>ID：</strong>${escapeHtml(user.id)}</p>
+            <p><strong>簡介：</strong>歡迎來到我的動漫小天地 ✨</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="homeNewPostBtn">新增貼文</button>
+          <button id="homeShareBtn" class="secondary-btn">前往分享區</button>
+          <button id="homeLogoutBtn" class="gray-btn">登出</button>
+        </div>
+      `;
+
+      document.getElementById("homeNewPostBtn").addEventListener("click", openCreatePostForm);
+      document.getElementById("homeShareBtn").addEventListener("click", () => {
+        renderAllPosts();
+        showSection("share");
+      });
+      document.getElementById("homeLogoutBtn").addEventListener("click", () => {
+        clearCurrentUser();
+        showToast("已登出");
+        renderAllPosts();
+        showSection("share");
+      });
+
+      renderMyPosts();
+    }
+
+    function renderMyPosts() {
+      const user = getCurrentUser();
+      const container = document.getElementById("myPostsList");
+
+      if (!user) {
+        container.innerHTML = '<div class="empty">請先登入</div>';
+        return;
+      }
+
+      const posts = getPosts()
+        .filter(post => post.authorId === user.id)
+        .sort((a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt));
+
+      if (posts.length === 0) {
+        container.innerHTML = '<div class="empty">你還沒有貼文，快來分享第一篇吧！</div>';
+        return;
+      }
+
+      container.innerHTML = posts.map(post => `
+        <div class="post-card">
+          <div class="post-title">${escapeHtml(post.title)}</div>
+          <div class="post-meta">
+            發布時間：${escapeHtml(post.createdAt)}
+            ${post.updatedAt ? `｜最後編輯：${escapeHtml(post.updatedAt)}` : ""}
+          </div>
+          <div class="post-content">${escapeHtml(post.content)}</div>
+          ${post.image ? `<img class="post-image" src="${post.image}" alt="post image">` : ""}
+          <div class="post-actions">
+            <button class="icon-btn">❤️ ${post.likes}</button>
+            <button class="icon-btn">💬 ${post.comments.length}</button>
+          </div>
+          <div class="owner-actions">
+            <button onclick="editPost('${post.postId}')">✏️ 編輯</button>
+            <button class="danger-btn" onclick="deletePost('${post.postId}')">🗑️ 刪除</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    document.getElementById("goNewPostFromHome").addEventListener("click", openCreatePostForm);
+
+    function renderNewPostUser() {
+      const user = getCurrentUser();
+      const wrap = document.getElementById("newPostUserInfo");
+
+      if (!user) {
+        showToast("請先登入");
+        showSection("auth");
+        return;
+      }
+
+      wrap.innerHTML = `
+        <img class="avatar" src="${user.avatar}" alt="avatar">
+        <div class="profile-meta">
+          <p><strong>${escapeHtml(user.name)}</strong></p>
+          <p>ID：${escapeHtml(user.id)}</p>
+        </div>
+      `;
+    }
+
+    const postImageInput = document.getElementById("postImage");
+    const postImagePreview = document.getElementById("postImagePreview");
+    const postFormTitle = document.getElementById("postFormTitle");
+    const submitPostBtn = document.getElementById("submitPostBtn");
+
+    postImageInput.addEventListener("change", function() {
+      const file = this.files[0];
+      if (!file) {
+        if (!postImagePreview.dataset.keepImage) {
+          postImagePreview.classList.add("hidden");
+          postImagePreview.removeAttribute("src");
+        }
+        return;
+      }
+
+      fileToBase64(file, base64 => {
+        postImagePreview.src = base64;
+        postImagePreview.classList.remove("hidden");
+        postImagePreview.dataset.keepImage = "";
+      });
+    });
+
+    function resetPostForm() {
+      editingPostId = null;
+      postFormTitle.textContent = "新增貼文";
+      submitPostBtn.textContent = "發布貼文";
+      document.getElementById("postTitle").value = "";
+      document.getElementById("postContent").value = "";
+      postImageInput.value = "";
+      postImagePreview.classList.add("hidden");
+      postImagePreview.removeAttribute("src");
+      postImagePreview.dataset.keepImage = "";
+    }
+
+    function openCreatePostForm() {
+      const user = getCurrentUser();
+      if (!user) {
+        showToast("請先登入");
+        showSection("auth");
+        return;
+      }
+
+      resetPostForm();
+      renderNewPostUser();
+      showSection("newPost");
+    }
+
+    function editPost(postId) {
+      const user = getCurrentUser();
+      if (!user) {
+        showToast("請先登入");
+        showSection("auth");
+        return;
+      }
+
+      const posts = getPosts();
+      const post = posts.find(p => p.postId === postId);
+
+      if (!post) {
+        showToast("找不到貼文");
+        return;
+      }
+
+      if (post.authorId !== user.id) {
+        showToast("只能編輯自己的貼文");
+        return;
+      }
+
+      editingPostId = postId;
+      postFormTitle.textContent = "編輯貼文";
+      submitPostBtn.textContent = "儲存修改";
+
+      document.getElementById("postTitle").value = post.title;
+      document.getElementById("postContent").value = post.content;
+      postImageInput.value = "";
+
+      if (post.image) {
+        postImagePreview.src = post.image;
+        postImagePreview.classList.remove("hidden");
+        postImagePreview.dataset.keepImage = post.image;
+      } else {
+        postImagePreview.classList.add("hidden");
+        postImagePreview.removeAttribute("src");
+        postImagePreview.dataset.keepImage = "";
+      }
+
+      renderNewPostUser();
+      showSection("newPost");
+    }
+
+    function deletePost(postId) {
+      const user = getCurrentUser();
+      if (!user) {
+        showToast("請先登入");
+        showSection("auth");
+        return;
+      }
+
+      const posts = getPosts();
+      const post = posts.find(p => p.postId === postId);
+
+      if (!post) {
+        showToast("找不到貼文");
+        return;
+      }
+
+      if (post.authorId !== user.id) {
+        showToast("只能刪除自己的貼文");
+        return;
+      }
+
+      const confirmed = confirm("確定要刪除這篇貼文嗎？刪除後無法恢復。");
+      if (!confirmed) return;
+
+      const newPosts = posts.filter(p => p.postId !== postId);
+      setPosts(newPosts);
+
+      showToast("貼文已刪除");
+      renderMyPosts();
+      renderAllPosts();
+    }
+
+    document.getElementById("submitPostBtn").addEventListener("click", () => {
+      const user = getCurrentUser();
+      if (!user) {
+        showToast("請先登入");
+        showSection("auth");
+        return;
+      }
+
+      const title = document.getElementById("postTitle").value.trim();
+      const content = document.getElementById("postContent").value.trim();
+      const imageFile = postImageInput.files[0];
+
+      if (!title || !content) {
+        showToast("主題與內容不可空白");
+        return;
+      }
+
+      fileToBase64(imageFile, imageBase64 => {
+        const posts = getPosts();
+
+        if (editingPostId) {
+          const post = posts.find(p => p.postId === editingPostId);
+
+          if (!post) {
+            showToast("找不到要編輯的貼文");
+            return;
+          }
+
+          if (post.authorId !== user.id) {
+            showToast("只能編輯自己的貼文");
+            return;
+          }
+
+          post.title = title;
+          post.content = content;
+          post.image = imageBase64 || postImagePreview.dataset.keepImage || "";
+          post.updatedAt = formatTime(new Date());
+
+          setPosts(posts);
+          showToast("貼文修改成功");
+        } else {
+          const newPost = {
+            postId: makeId("post"),
+            authorId: user.id,
+            authorName: user.name,
+            authorAvatar: user.avatar,
+            title,
+            content,
+            image: imageBase64 || "",
+            createdAt: formatTime(new Date()),
+            updatedAt: "",
+            likes: 0,
+            likedUsers: [],
+            comments: []
+          };
+
+          posts.push(newPost);
+          setPosts(posts);
+          showToast("貼文發布成功");
+        }
+
+        resetPostForm();
+        renderHome();
+        renderAllPosts();
+        showSection("home");
+      });
+    });
+
+    document.getElementById("cancelPostBtn").addEventListener("click", () => {
+      resetPostForm();
+      renderHome();
+      showSection("home");
+    });
+
+    function getFilteredPosts(posts, keyword) {
+      const kw = keyword.trim().toLowerCase();
+      if (!kw) return posts;
+
+      return posts.filter(post => {
+        const author = `${post.authorName} ${post.authorId}`.toLowerCase();
+        const title = post.title.toLowerCase();
+        const content = post.content.toLowerCase();
+        return author.includes(kw) || title.includes(kw) || content.includes(kw);
+      });
+    }
+
+    function viewUserProfile(userId) {
+      const users = getUsers();
+      const targetUser = users.find(u => u.id === userId);
+      
+      if (!targetUser) {
+        showToast("找不到該用戶");
+        return;
+      }
+      
+      const currentUser = getCurrentUser();
+      if (currentUser && currentUser.id === userId) {
+        // 如果點擊自己，就導向個人首頁
+        renderHome();
+        showSection("home");
+        return;
+      }
+
+      viewingUserId = userId;
+      const profileArea = document.getElementById("otherProfileArea");
+      profileArea.innerHTML = `
+        <div class="profile-box">
+          <img class="avatar" src="${targetUser.avatar}" alt="avatar" />
+          <div class="profile-meta">
+            <p><strong>名稱：</strong>${escapeHtml(targetUser.name)}</p>
+            <p><strong>ID：</strong>${escapeHtml(targetUser.id)}</p>
+            <p><strong>簡介：</strong>歡迎來到這位使用者的動漫小天地 ✨</p>
+          </div>
+        </div>
+      `;
+
+      renderUserPosts(userId);
+      showSection("userProfile");
+    }
+
+    function renderUserPosts(userId) {
+      const container = document.getElementById("otherPostsList");
+      const currentUser = getCurrentUser();
+      const posts = getPosts()
+        .filter(post => post.authorId === userId)
+        .sort((a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt));
+
+      if (posts.length === 0) {
+        container.innerHTML = '<div class="empty">這個人還沒有發布過貼文喔！</div>';
+        return;
+      }
+
+      container.innerHTML = posts.map(post => {
+        const liked = currentUser ? post.likedUsers.includes(currentUser.id) : false;
+        
+        return `
+          <div class="post-card">
+            <div class="post-title">${escapeHtml(post.title)}</div>
+            <div class="post-meta">
+              發布時間：${escapeHtml(post.createdAt)}
+              ${post.updatedAt ? \`｜最後編輯：\${escapeHtml(post.updatedAt)}\` : ""}
+            </div>
+            <div class="post-content">${escapeHtml(post.content)}</div>
+            ${post.image ? \`<img class="post-image" src="\${post.image}" alt="post image">\` : ""}
+            <div class="post-actions">
+              <button class="icon-btn ${liked ? "liked" : ""}" onclick="toggleLike('\${post.postId}')">❤️ \${post.likes}</button>
+              <button class="icon-btn" onclick="toggleComments('\${post.postId}')">💬 \${post.comments.length}</button>
+            </div>
+            <div class="comments-section hidden" id="comments-\${post.postId}">
+              <div>
+                ${
+                  post.comments.length === 0
+                    ? '<div class="empty">目前還沒有留言</div>'
+                    : post.comments.map(comment => `
+                      <div class="comment-item">
+                        <img class="small-avatar clickable-user" src="\${comment.userAvatar}" alt="avatar" onclick="viewUserProfile('\${comment.userId}')">
+                        <div class="comment-body">
+                          <div class="comment-top">
+                            <strong class="clickable-user" onclick="viewUserProfile('\${comment.userId}')">\${escapeHtml(comment.userName)}</strong>（@\${escapeHtml(comment.userId)}）・\${escapeHtml(comment.createdAt)}
+                          </div>
+                          <div class="comment-content">\${escapeHtml(comment.content)}</div>
+                        </div>
+                      </div>
+                    `).join("")
+                }
+              </div>
+              ${
+                currentUser
+                  ? `
+                  <div class="comment-form">
+                    <input type="text" id="comment-input-\${post.postId}" placeholder="輸入留言內容..." />
+                    <button onclick="submitComment('\${post.postId}')">送出留言</button>
+                  </div>
+                `
+                  : `
+                  <div class="comment-form">
+                    <input type="text" placeholder="請先登入後留言" disabled />
+                    <button class="gray-btn" onclick="requireLoginAction()">送出留言</button>
+                  </div>
+                `
+              }
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderAllPosts() {
+      const currentUser = getCurrentUser();
+      const container = document.getElementById("allPostsList");
+
+      let posts = getPosts().sort(
+        (a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt)
+      );
+
+      posts = getFilteredPosts(posts, currentSearchKeyword);
+
+      if (posts.length === 0) {
+        container.innerHTML = `<div class="empty">${currentSearchKeyword ? "找不到符合搜尋條件的貼文" : "目前還沒有貼文，快來成為第一位分享的人吧！"}</div>`;
+        return;
+      }
+
+      container.innerHTML = posts.map(post => {
+        const liked = currentUser ? post.likedUsers.includes(currentUser.id) : false;
+        const isOwner = currentUser && currentUser.id === post.authorId;
+
+        return `
+          <div class="post-card">
+            <div class="post-header">
+              <img class="small-avatar clickable-user" src="${post.authorAvatar}" alt="avatar" onclick="viewUserProfile('${post.authorId}')">
+              <div>
+                <div class="clickable-user" onclick="viewUserProfile('${post.authorId}')"><strong>${escapeHtml(post.authorName)}</strong>（@${escapeHtml(post.authorId)}）</div>
+                <div class="post-meta">
+                  ${escapeHtml(post.createdAt)}
+                  ${post.updatedAt ? `｜最後編輯：${escapeHtml(post.updatedAt)}` : ""}
+                </div>
+              </div>
+            </div>
+
+            <div class="post-title">${escapeHtml(post.title)}</div>
+            <div class="post-content">${escapeHtml(post.content)}</div>
+            ${post.image ? `<img class="post-image" src="${post.image}" alt="貼文圖片">` : ""}
+
+            <div class="post-actions">
+              <button class="icon-btn ${liked ? "liked" : ""}" onclick="toggleLike('${post.postId}')">
+                ❤️ ${post.likes}
+              </button>
+              <button class="icon-btn" onclick="toggleComments('${post.postId}')">
+                💬 ${post.comments.length}
+              </button>
+            </div>
+
+            ${
+              isOwner
+                ? `
+                <div class="owner-actions">
+                  <button onclick="editPost('${post.postId}')">✏️ 編輯</button>
+                  <button class="danger-btn" onclick="deletePost('${post.postId}')">🗑️ 刪除</button>
+                </div>
+              `
+                : ""
+            }
+
+            <div class="comments-section hidden" id="comments-${post.postId}">
+              <div>
+                ${
+                  post.comments.length === 0
+                    ? '<div class="empty">目前還沒有留言</div>'
+                    : post.comments.map(comment => `
+                      <div class="comment-item">
+                        <img class="small-avatar clickable-user" src="${comment.userAvatar}" alt="avatar" onclick="viewUserProfile('${comment.userId}')">
+                        <div class="comment-body">
+                          <div class="comment-top">
+                            <strong class="clickable-user" onclick="viewUserProfile('${comment.userId}')">${escapeHtml(comment.userName)}</strong>（@${escapeHtml(comment.userId)}）・${escapeHtml(comment.createdAt)}
+                          </div>
+                          <div class="comment-content">${escapeHtml(comment.content)}</div>
+                        </div>
+                      </div>
+                    `).join("")
+                }
+              </div>
+
+              ${
+                currentUser
+                  ? `
+                  <div class="comment-form">
+                    <input type="text" id="comment-input-${post.postId}" placeholder="輸入留言內容..." />
+                    <button onclick="submitComment('${post.postId}')">送出留言</button>
+                  </div>
+                `
+                  : `
+                  <div class="comment-form">
+                    <input type="text" placeholder="請先登入後留言" disabled />
+                    <button class="gray-btn" onclick="requireLoginAction()">送出留言</button>
+                  </div>
+                `
+              }
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function toggleLike(postId) {
+      const currentUser = getCurrentUser();
+      if (!currentUser) {
+        showToast("登入後即可按讚與留言");
+        showSection("auth");
+        return;
+      }
+
+      const posts = getPosts();
+      const post = posts.find(p => p.postId === postId);
+      if (!post) return;
+
+      const likedIndex = post.likedUsers.indexOf(currentUser.id);
+
+      if (likedIndex > -1) {
+        post.likedUsers.splice(likedIndex, 1);
+      } else {
+        post.likedUsers.push(currentUser.id);
+      }
+
+      post.likes = post.likedUsers.length;
+      setPosts(posts);
+      renderAllPosts();
+      renderMyPosts();
+      if (userProfileSection && !userProfileSection.classList.contains("hidden") && viewingUserId) {
+        renderUserPosts(viewingUserId);
+      }
+    }
+
+    function toggleComments(postId) {
+      const box = document.getElementById("comments-" + postId);
+      if (!box) return;
+      box.classList.toggle("hidden");
+    }
+
+    function submitComment(postId) {
+      const currentUser = getCurrentUser();
+      if (!currentUser) {
+        requireLoginAction();
+        return;
+      }
+
+      const input = document.getElementById("comment-input-" + postId);
+      if (!input) return;
+
+      const content = input.value.trim();
+      if (!content) {
+        showToast("留言內容不可空白");
+        return;
+      }
+
+      const posts = getPosts();
+      const post = posts.find(p => p.postId === postId);
+      if (!post) return;
+
+      post.comments.push({
+        commentId: makeId("comment"),
+        postId,
+        userId: currentUser.id,
+        userName: currentUser.name,
+        userAvatar: currentUser.avatar,
+        content,
+        createdAt: formatTime(new Date())
+      });
+
+      setPosts(posts);
+      renderAllPosts();
+      renderMyPosts();
+      if (userProfileSection && !userProfileSection.classList.contains("hidden") && viewingUserId) {
+        renderUserPosts(viewingUserId);
+      }
+
+      setTimeout(() => {
+        const commentsBox = document.getElementById("comments-" + postId);
+        if (commentsBox) commentsBox.classList.remove("hidden");
+      }, 0);
+
+      showToast("留言成功");
+    }
+
+    function requireLoginAction() {
+      showToast("是否已有平台帳號？登入後即可留言與互動");
+      showSection("auth");
+    }
+
+    document.getElementById("searchBtn").addEventListener("click", () => {
+      currentSearchKeyword = document.getElementById("searchInput").value.trim();
+      renderAllPosts();
+    });
+
+    document.getElementById("clearSearchBtn").addEventListener("click", () => {
+      currentSearchKeyword = "";
+      document.getElementById("searchInput").value = "";
+      renderAllPosts();
+    });
+
+    document.getElementById("searchInput").addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        currentSearchKeyword = e.target.value.trim();
+        renderAllPosts();
+      }
+    });
+
+    function startApp() {
+      initializeDemoData();
+      updateNav();
+      renderAllPosts();
+
+      const user = getCurrentUser();
+      if (user) {
+        renderHome();
+        showSection("home");
+      } else {
+        showSection("share");
+      }
+    }
+
+    startApp();
+  </script>
+</body>
+</html>
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
